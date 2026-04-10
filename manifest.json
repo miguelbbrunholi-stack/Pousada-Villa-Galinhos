@@ -1,8 +1,6 @@
-
-
 {
-  "name": "Meu App",
-  "short_name": "App",
+  "name": "Villa Galinhos",
+  "short_name": "Villa Galinhos",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
