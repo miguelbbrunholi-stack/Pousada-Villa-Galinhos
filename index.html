@@ -10,9 +10,6 @@
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#000000">
 <title>Villa Galinhos — Reservas</title>
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"></script>
-
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   html { font-size: 16px; }
@@ -446,18 +443,6 @@
 </div>
 
 <script>
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-const app = initializeApp({
-  apiKey: "SUA_KEY",
-  authDomain: "seu-app.firebaseapp.com",
-  projectId: "seu-app"
-});
-
-const db = getFirestore(app);
-
 const MESES = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
 const DIAS_S = ['D','S','T','Q','Q','S','S'];
 const TIPOS_ICON = {'Simples':'🛏️','Duplo':'🛏️','Triplo':'🛏️','Suíte':'✨','Suíte Master':'👑','Familiar':'👨‍👩‍👧'};
@@ -843,11 +828,7 @@ load();
 renderDashboard();
 
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/service-worker.js")
-      .then(() => console.log("Service Worker registrado"))
-      .catch(err => console.log("Erro:", err));
-  });
+  navigator.serviceWorker.register("/service-worker.js");
 }
 
 </script>
